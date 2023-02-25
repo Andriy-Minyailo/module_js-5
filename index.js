@@ -76,17 +76,37 @@
 // };
 
 // task_4
-const parent = {
-  name: "Stacey",
-  surname: "Moore",
-  age: 54,
+// const parent = {
+//   name: "Stacey",
+//   surname: "Moore",
+//   age: 54,
+//   heritage: "Irish",
+// };
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+// child.name = "Jason";
+// child.age = 27;
+
+// task_5
+const ancestor = {
+  name: "Paul",
+  age: 83,
+  surname: "Dawson",
   heritage: "Irish",
 };
 // Change code below this line
 
-const child = Object.create(parent);
+const parent = Object.create(ancestor);
+parent.name = "Stacey";
+parent.surname = "Moore";
+parent.age = 54;
 
-// Change code above this line
+const child = Object.create(parent);
 child.name = "Jason";
 child.age = 27;
+
+// Change code above this line
 
