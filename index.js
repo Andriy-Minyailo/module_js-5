@@ -110,3 +110,15 @@
 
 // // Change code above this line
 
+// task_7
+class Car {
+  // Change code below this line
+constructor (brand, model, price) {
+  this.brand = brand;
+  this.model = model;
+  this.price = price;
+}
+
+
+  // Change code above this line
+}
