@@ -124,12 +124,31 @@
 // }
 
 // task_8
+// class Car {
+//   // Change code below this line
+//   constructor({brand, model, price}) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code above this line
+// }
+
+// task_9
 class Car {
-  // Change code below this line
-  constructor({brand, model, price}) {
+  constructor({ brand, model, price }) {
     this.brand = brand;
     this.model = model;
     this.price = price;
   }
+  // Change code below this line
+getPrice () {
+  return this.price
+}
+changePrice(newPrice) {
+  this.price = newPrice
+}
+
   // Change code above this line
 }
+
