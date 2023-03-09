@@ -153,28 +153,57 @@
 // }
 
 // task_10
-class Storage {
-  constructor (items) {
-    this.items = items;
+// class Storage {
+//   constructor (items) {
+//     this.items = items;
+//   }
+//   getItems() {
+//     return this.items
+//   }
+//   addItem(newItem) {
+//     this.items.push(newItem)
+//   }
+//   removeItem(itemToRemove) {
+//     const indexItemToRemove = this.items.indexOf(itemToRemove);
+//     this.items.splice(indexItemToRemove, 1);
+//   }
+// }
+
+
+// // Change code above this line
+// const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+// storage.addItem("Droid");
+// console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+// storage.removeItem("Prolonger");
+// console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+
+// task_11
+class StringBuilder {
+  constructor (initialValue) {
+    this.value = initialValue;
   }
-  getItems() {
-    return this.items
+  getValue() {
+    return this.value;
   }
-  addItem(newItem) {
-    this.items.push(newItem)
+  padEnd(str) {
+    this.value += str;
   }
-  removeItem(itemToRemove) {
-    const indexItemToRemove = this.items.indexOf(itemToRemove);
-    this.items.splice(indexItemToRemove, 1);
+  padStart(str) {
+    this.value = str + this.value;
+  }
+  padBoth(str) {
+     this.value = str + this.value + str;
   }
 }
 
 
 // Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
