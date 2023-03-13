@@ -257,37 +257,75 @@
 // console.log(storage.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
 
 // task_14
-class StringBuilder {
+// class StringBuilder {
+//   // Change code below this line
+// #value;
+//   constructor(initialValue) {
+//     this.#value = initialValue;
+//   }
+
+//   getValue() {
+//     return this.#value;
+//   }
+
+//   padEnd(str) {
+//     this.#value += str;
+//   }
+
+//   padStart(str) {
+//     this.#value = str + this.#value;
+//   }
+
+//   padBoth(str) {
+//     this.padStart(str);
+//     this.padEnd(str);
+//   }
+// }
+
+// // Change code above this line
+// const builder = new StringBuilder(".");
+// console.log(builder.getValue()); // "."
+// builder.padStart("^");
+// console.log(builder.getValue()); // "^."
+// builder.padEnd("^");
+// console.log(builder.getValue()); // "^.^"
+// builder.padBoth("=");
+// console.log(builder.getValue()); // "=^.^="
+
+// task_15
+class Car {
   // Change code below this line
-#value;
-  constructor(initialValue) {
-    this.#value = initialValue;
+  #brand;
+#model;
+  #price;
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.#model = model;
+    this.#price = price;
   }
 
-  getValue() {
-    return this.#value;
+  get brand() {
+    return this.#brand;
   }
 
-  padEnd(str) {
-    this.#value += str;
+  set brand(newBrand) {
+    this.#brand = newBrand;
   }
 
-  padStart(str) {
-    this.#value = str + this.#value;
+  get model() {
+    return this.#model;
   }
 
-  padBoth(str) {
-    this.padStart(str);
-    this.padEnd(str);
+  set model(newModel) {
+    this.#model = newModel;
   }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
+  }
+  // Change code above this line
 }
-
-// Change code above this line
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
