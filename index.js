@@ -331,33 +331,57 @@
 // }
 
 // task_16
-class Car {
-  // Change code below this line
-  static MAX_PRICE = 50000;
+// class Car {
+//   // Change code below this line
+//   static MAX_PRICE = 50000;
   
-  #price;
+//   #price;
 
-  constructor({ price }) {
-    this.#price = price;
-  }
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
 
-  get price() {
-    return this.#price;
-  }
+//   get price() {
+//     return this.#price;
+//   }
 
-  set price(newPrice) {
-    if (newPrice <= Car.MAX_PRICE) {
-    this.#price = newPrice;
-    }
+//   set price(newPrice) {
+//     if (newPrice <= Car.MAX_PRICE) {
+//     this.#price = newPrice;
+//     }
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// task_17
+class Car {
+  static #MAX_PRICE = 50000;
+  // Change code below this line
+static checkPrice (price) {
+  if (price > Car.#MAX_PRICE) {
+    return "Error! Price exceeds the maximum";
+  } else {
+    return "Success! Price is within acceptable limits";
   }
+}
   // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
 }
 
-const audi = new Car({ price: 35000 });
-console.log(audi.price); // 35000
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
 
-audi.price = 49000;
-console.log(audi.price); // 49000
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
-audi.price = 51000;
-console.log(audi.price); // 49000
