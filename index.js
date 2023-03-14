@@ -386,7 +386,28 @@
 // console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
 // task_18
+// class User {
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// // Change code below this line
+// class Admin extends User {
+//   static AccessLevel = {BASIC: "basic", SUPERUSER: "superuser"};
+// }
+
+// task_19
 class User {
+  email;
+
   constructor(email) {
     this.email = email;
   }
@@ -399,8 +420,25 @@ class User {
     this.email = newEmail;
   }
 }
-// Change code below this line
+
 class Admin extends User {
-  static AccessLevel = {BASIC: "basic", SUPERUSER: "superuser"};
+  // Change code below this line
+
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+constructor ({email, accessLevel}) {
+  super(email);
+  this.accessLevel = accessLevel;
+}
+  // Change code above this line
 }
 
+const mango = new Admin({
+  email: "mango@mail.com",
+  accessLevel: Admin.AccessLevel.SUPERUSER,
+});
+
+console.log(mango.email); // "mango@mail.com"
+console.log(mango.accessLevel); // "superuser"
